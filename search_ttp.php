@@ -8,9 +8,17 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-// Truy vấn cơ sở dữ liệu để lấy thông tin phòng
-$rooms_query = "SELECT * FROM rooms";
-$rooms_result = $conn->query($rooms_query);
+// Kiểm tra xem có dữ liệu được gửi từ form không
+if (isset($_GET['query'])) {
+    // Lấy từ khóa tìm kiếm từ form
+    $search_query = $_GET['query'];
+
+    // Truy vấn cơ sở dữ liệu để tìm kiếm thông tin phòng
+    $search_query = $conn->real_escape_string($search_query);
+    $search_query = '%' . $search_query . '%'; // Thêm dấu % cho phần tìm kiếm phù hợp
+    $search_rooms_query = "SELECT * FROM rooms WHERE room_number LIKE '$search_query' OR capacity LIKE '$search_query' OR status LIKE '$search_query'";
+    $search_rooms_result = $conn->query($search_rooms_query);
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +26,7 @@ $rooms_result = $conn->query($rooms_query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông tin Phòng</title>
+    <title>Kết quả tìm kiếm - Thông tin Phòng</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -32,16 +40,8 @@ $rooms_result = $conn->query($rooms_query);
         </div>
         <!-- Thêm nút đăng xuất -->
         <a href="logout.php" class="btn logout-button">Đăng xuất</a>
-        <h2>Thông tin phòng:</h2>
-        <!-- Thanh tìm kiếm -->
-        <form method="GET" action="search_ttp.php" class="search-form">
-            <input type="text" name="query" placeholder="Nhập từ khóa tìm kiếm">
-            <button type="submit" class="btn">Tìm kiếm</button>
-        </form>
-        <div class="button-container add-buttons">
-            <a href="add_room.php" class="btn">Thêm phòng</a>
-        </div>
-        <?php if (isset($rooms_result) && $rooms_result->num_rows > 0): ?>
+        <h2>Kết quả tìm kiếm:</h2>
+        <?php if (isset($search_rooms_result) && $search_rooms_result->num_rows > 0): ?>
             <table>
                 <tr>
                     <th>ID</th>
@@ -50,7 +50,7 @@ $rooms_result = $conn->query($rooms_query);
                     <th>Trạng thái</th>
                     <th>Chức năng</th>
                 </tr>
-                <?php while ($row = $rooms_result->fetch_assoc()): ?>
+                <?php while ($row = $search_rooms_result->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo $row["room_id"]; ?></td>
                         <td><?php echo $row["room_number"]; ?></td>
@@ -65,10 +65,14 @@ $rooms_result = $conn->query($rooms_query);
             </table>
             <div class="button-container add-buttons">
                 <!-- Nút trở về -->
-                <a href="dashboard.php" class="btn">Trở về</a>
+                <a href="thongtinphong.php" class="btn">Trở về</a>
             </div>
         <?php else: ?>
-            <p>Không có phòng</p>
+            <p>Không có kết quả phù hợp</p>
+            <div class="button-container add-buttons">
+                <!-- Nút trở về -->
+                <a href="thongtinphong.php" class="btn">Trở về</a>
+            </div>
         <?php endif; ?>
     </div>
 </body>

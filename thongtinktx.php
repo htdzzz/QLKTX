@@ -23,11 +23,21 @@ $hostels_result = $conn->query($hostels_query);
 </head>
 <body>
     <div class="container">
+        <div class="user-info">
+            <?php 
+                if (isset($_SESSION['username'])) {
+                    echo "<p>Xin chào, " . $_SESSION['username'] . "</p>";
+                }
+            ?>
+        </div>
         <!-- Thêm nút đăng xuất -->
-        <form method="POST" action="">
-            <button type="submit" name="logout" class="btn logout-button">Đăng xuất</button>
-        </form>
+        <a href="logout.php" class="btn logout-button">Đăng xuất</a>
         <h2>Thông tin ký túc xá:</h2>
+        <!-- Thanh tìm kiếm -->
+        <form method="GET" action="search.php" class="search-form">
+            <input type="text" name="query" placeholder="Nhập từ khóa tìm kiếm">
+            <button type="submit" class="btn">Tìm kiếm</button>
+        </form>
         <div class="button-container add-buttons">
             <a href="add_hostel.php" class="btn">Thêm ký túc xá</a>
         </div>

@@ -7,7 +7,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('background.jpg');
+    /* Đường dẫn đến hình nền */
+    background-size: cover;
+    background-position: center;
 }
+
 
 .container {
     width: 400px;
