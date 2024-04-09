@@ -1,93 +1,3 @@
-/* css login */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    width: 400px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-}
-
-h2 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-    text-align: center;
-}
-
-label {
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-p {
-    text-align: center;
-    margin-top: 20px;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-
-
-/* Thêm định dạng cho các div chứa nút */
-.button-container {
-    margin-bottom: 20px;
-    /* Thêm khoảng cách giữa các div */
-}
-
-/* Đặt các nút "Thêm" sang phải */
-.add-buttons {
-    text-align: right;
-}
-
-/* Thêm định dạng cho nút đăng xuất */
-.logout-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
 /* Reset CSS */
 * {
     margin: 0;
@@ -107,7 +17,6 @@ body {
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    /* Cần thiết để định vị nút đăng xuất */
 }
 
 h2 {
@@ -189,9 +98,10 @@ th {
     background-color: #45a049;
 }
 
-/* Thêm CSS cho thanh tìm kiếm */
+/* Search form style */
 .search-form {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .search-form input[type="text"] {
@@ -213,4 +123,61 @@ th {
 
 .search-form button:hover {
     background-color: #45a049;
+}
+
+/* Button container style */
+.button-container {
+    display: flex;
+    /* Sử dụng flexbox để sắp xếp các nút */
+    justify-content: flex-start;
+    /* Căn các nút vào bên trái */
+    margin-bottom: 20px;
+}
+
+/* Button style */
+.button-container .btn {
+    flex-grow: 1;
+    /* Tất cả các nút mở rộng để có kích thước bằng nhau */
+}
+
+
+
+/* Add buttons alignment */
+.add-buttons {
+    text-align: right;
+}
+
+/* Logout button style */
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #ff5733;
+    /* Orange-red color */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #ff6f3d;
+    /* Darker shade of orange-red */
+}
+
+/* Image inside button style */
+.btn img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+/* Text inside button style */
+.btn span {
+    display: block;
+    text-align: center;
 }
