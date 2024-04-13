@@ -1,0 +1,41 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #e0e0e0;
+}
+
+.menu-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.menu-text {
+    font-size: 18px;
+}
