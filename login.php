@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Đăng nhập thành công
         $row = $result->fetch_assoc();
         $_SESSION['username'] = $username;
+        $_SESSION['user_id'] = $row['user_id']; // Lưu user_id vào session
         $_SESSION['role'] = $row['role']; // Lưu vai trò của người dùng vào session
         if ($_SESSION['role'] === 'admin') {
             header("Location: dashboard.php");

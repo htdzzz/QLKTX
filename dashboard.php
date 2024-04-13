@@ -90,7 +90,7 @@ if ($_SESSION['role'] !== 'admin') {
         <div class="info">
             <h2>Thông tin liên hệ</h2>
             <p>Địa chỉ: VQ4P+249, Phường Tân Phú, Quận 9, Thành phố Hồ Chí Minh</p>
-            <p>Email: example@example.com</p>
+            <p>Email: hoangtiendung68.68@gmail.com</p>
             <p>Điện thoại: 0123 456 789</p>
         </div>
     </footer>
