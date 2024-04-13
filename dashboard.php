@@ -38,7 +38,7 @@ if ($_SESSION['role'] !== 'admin') {
         <a href="logout.php" class="btn logout-button">Đăng xuất</a>
         <h1>Dashboard - Quản Lý Ký Túc Xá</h1>
         <div class="banner">
-            <img src="images/banner.jpg" alt="Banner" width="1100" height="250">
+            <img src="images/banner.png" alt="Banner" width="1100" height="300">
         </div>
         <div class="button-container-infor">
             <!-- Nút chuyển qua trang thông tin sinh viên -->
@@ -55,11 +55,32 @@ if ($_SESSION['role'] !== 'admin') {
                     <span>Thông tin phòng</span>
                 </a>
             </div>
-            <!-- Nút chuyển qua trang thông tin ký túc xá -->
+            <!-- Nút chuyển qua trang Quản lý Dịch vụ Tiện ích -->
             <div class="button-infor">
-                <a href="thongtinktx.php" class="btn">
-                    <img src="images/man.jpg" alt="Thông tin ký túc xá" width="50" height="50">
-                    <span>Chức năng mới</span>
+                <a href="dichvu_tienich.php" class="btn">
+                    <img src="images/man.jpg" alt="Quản lý Dịch vụ Tiện ích" width="50" height="50">
+                    <span>Quản lý Dịch vụ Tiện ích</span>
+                </a>
+            </div>
+            <!-- Nút chuyển qua trang Quản lý Thanh toán -->
+            <div class="button-infor">
+                <a href="payment_management.php" class="btn">
+                    <img src="images/man.jpg" alt="Quản lý Thanh toán" width="50" height="50">
+                    <span>Quản lý Thanh toán</span>
+                </a>
+            </div>
+            <!-- Nút chuyển qua trang Quản lý Sự kiện và Hoạt động -->
+            <div class="button-infor">
+                <a href="quanlysukien.php" class="btn">
+                    <img src="images/man.jpg" alt="Quản lý Sự kiện và Hoạt động" width="50" height="50">
+                    <span>Quản lý Sự kiện và Hoạt động</span>
+                </a>
+            </div>
+            <!-- Nút chuyển qua trang Báo cáo và Thống kê -->
+            <div class="button-infor">
+                <a href="baocao_thongke.php" class="btn">
+                    <img src="images/man.jpg" alt="Báo cáo và Thống kê" width="50" height="50">
+                    <span>Báo cáo và Thống kê</span>
                 </a>
             </div>
         </div>
