@@ -17,14 +17,14 @@ if ($_SESSION['role'] !== 'admin') {
 // Truy vấn cơ sở dữ liệu để lấy thông tin sinh viên (nếu cần)
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Quản Lý Ký Túc Xá</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
     <div class="container">
@@ -34,52 +34,52 @@ if ($_SESSION['role'] !== 'admin') {
                     echo "<p>Xin chào, " . $_SESSION['username'] . "</p>";
                 }
             ?>
+            <a href="logout.php" class="btn logout-button">Đăng xuất</a>
         </div>
-        <a href="logout.php" class="btn logout-button">Đăng xuất</a>
         <h1>Dashboard - Quản Lý Ký Túc Xá</h1>
         <div class="banner">
-            <img src="images/banner.png" alt="Banner" width="1100" height="300">
+            <img src="images/banner.png" alt="Banner">
         </div>
         <div class="button-container-infor">
             <!-- Nút chuyển qua trang thông tin sinh viên -->
             <div class="button-infor">
                 <a href="thongtinsv.php" class="btn">
-                    <img src="images/man.jpg" alt="Thông tin sinh viên" width="50" height="50">
+                    <img src="images/man.jpg" alt="Thông tin sinh viên">
                     <span>Thông tin sinh viên</span>
                 </a>
             </div>
             <!-- Nút chuyển qua trang thông tin phòng -->
             <div class="button-infor">
                 <a href="thongtinphong.php" class="btn">
-                    <img src="images/man.jpg" alt="Thông tin phòng" width="50" height="50">
+                    <img src="images/man.jpg" alt="Thông tin phòng">
                     <span>Thông tin phòng</span>
                 </a>
             </div>
             <!-- Nút chuyển qua trang Quản lý Dịch vụ Tiện ích -->
             <div class="button-infor">
                 <a href="dichvu_tienich.php" class="btn">
-                    <img src="images/man.jpg" alt="Quản lý Dịch vụ Tiện ích" width="50" height="50">
+                    <img src="images/man.jpg" alt="Quản lý Dịch vụ Tiện ích">
                     <span>Quản lý Dịch vụ Tiện ích</span>
                 </a>
             </div>
             <!-- Nút chuyển qua trang Quản lý Thanh toán -->
             <div class="button-infor">
                 <a href="payment_management.php" class="btn">
-                    <img src="images/man.jpg" alt="Quản lý Thanh toán" width="50" height="50">
+                    <img src="images/man.jpg" alt="Quản lý Thanh toán">
                     <span>Quản lý Thanh toán</span>
                 </a>
             </div>
             <!-- Nút chuyển qua trang Quản lý Sự kiện và Hoạt động -->
             <div class="button-infor">
                 <a href="quanlysukien.php" class="btn">
-                    <img src="images/man.jpg" alt="Quản lý Sự kiện và Hoạt động" width="50" height="50">
+                    <img src="images/man.jpg" alt="Quản lý Sự kiện và Hoạt động">
                     <span>Quản lý Sự kiện và Hoạt động</span>
                 </a>
             </div>
             <!-- Nút chuyển qua trang Báo cáo và Thống kê -->
             <div class="button-infor">
                 <a href="baocao_thongke.php" class="btn">
-                    <img src="images/man.jpg" alt="Báo cáo và Thống kê" width="50" height="50">
+                    <img src="images/man.jpg" alt="Báo cáo và Thống kê">
                     <span>Báo cáo và Thống kê</span>
                 </a>
             </div>

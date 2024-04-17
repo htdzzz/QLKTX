@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li>
-                <a href="thanh_toan.php">
+                <a href="payment.php">
                     <span class="menu-icon">&#128184;</span>
                     <span class="menu-text">Quản lý Thanh toán</span>
                 </a>
